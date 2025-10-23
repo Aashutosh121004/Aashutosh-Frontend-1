@@ -1,0 +1,31 @@
+CSS -Cascading Style Sheets
+why css?
+we can add styles to our html elements using css
+we can control the layout of multiple web pages all at once using css
+
+Types of css:
+1. Inline CSS - there is style attribute inside html tags
+ eg. <h1 style="color:blue;">Hello World</h1>
+2. Internal CSS - inside <style> tag in the head section of html document
+ eg.   <head>
+          <style>
+            h1 { // this is the element of the body
+              color: blue;
+            }
+          </style>
+        </head>
+3. External CSS - in an external file with .css extension- we have to create sparate file 
+and link it to html file using <link> tag inside head section of html document
+
+inline css has highest priority
+external css has lowest priority
+ 
+ 1. target element 
+ 2. syntax :
+    selector {
+    property: value;
+    }
+    eg - h1 {(if there are multiple h1 tags in body, all will be affected or if you want to target 
+    particular - you can use class or id)
+            color: blue;
+          }
