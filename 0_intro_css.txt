@@ -17,7 +17,7 @@ Types of css:
 3. External CSS - in an external file with .css extension- we have to create sparate file 
 and link it to html file using <link> tag inside head section of html document
 
-inline css has highest priority
+inline css has highest priority- but if we have more than 2-3 properties to apply in css we use css selectors
 external css has lowest priority
  
  1. target element 
@@ -29,3 +29,12 @@ external css has lowest priority
     particular - you can use class or id)
             color: blue;
           }
+
+
+css selectors:
+1. id selector: attribute , change single element property, id value must be unique
+--- we can access id in css using #id-value{}- id value must be unique
+2. class selector: attribute , when we have to change multiple property in same or different elements
+-- class value can be same or unique --.class-value{}
+3. element selector : p{},h2{}
+4. universal selector: *{}
