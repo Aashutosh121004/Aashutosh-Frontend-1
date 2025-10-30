@@ -1,7 +1,27 @@
+/*
+1. change first heading color to rgb(21, 116, 21)
+2. change second & third heading color to blue or same color
+3. h1 - make it centre and underlined
+4. first para - change the font style
+5. second and third para - bold using css
+note : all task should be done in external css
+
+*/
+
 h2{
     color:blue;
 }
 #first-heading{
-    color:green;
+    color:rgb(21, 116, 21);
+}
+h1{
+    text-align:center;
+    text-decoration:underline;
+}
+#first-para{
+    font-style:italic;
+}
+.para{
+    font-weight: bold;
 }
 
