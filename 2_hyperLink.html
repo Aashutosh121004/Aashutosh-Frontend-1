@@ -26,10 +26,18 @@ attribute: additional information about that element, openiing tag
 anchor tag - a
 href="link/webpageLink/path"
 target="_blank" - new tab
+<!-- Opens in same tab (default) 
+<a href="https://google.com">Google</a>
 
-title="" for all elements
--->
+<!-- Opens in new tab (what most people want for external links) 
+<a href="https://google.com" target="_blank">Google (new tab)</a>
+
+<!-- Modern recommendation: new tab + security best practice 
+<a href="https://google.com" target="_blank" rel="noopener noreferrer">Google</a>
+title="" for all elements-->
+
 <!-- 
 BLOCK-LEVEL-ELEMENT: will cover 100% width of webpage - heading tags,p
 INLINE-ELEMENT: anchor, input,label
+
 -->
