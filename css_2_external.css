@@ -18,10 +18,10 @@ h1{
     text-align:center;
     text-decoration:underline;
 }
-#first-para{
+#first-para{/*# is used to mention a id*/
     font-style:italic;
 }
-.para{
+.para{ /*. is used to mention a class*/
     font-weight: bold;
 }
 
