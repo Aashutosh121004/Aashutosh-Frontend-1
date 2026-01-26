@@ -4,7 +4,7 @@ we can add styles to our html elements using css
 we can control the layout of multiple web pages all at once using css
 
 Types of css:
-1. Inline CSS - there is style attribute inside html tags
+1. Inline CSS - there is style attribute inside html tags - we use it for adding 1-2 element change not more than that otherwise it will create mess
  eg. <h1 style="color:blue;">Hello World</h1>
 2. Internal CSS - inside <style> tag in the head section of html document
  eg.   <head>
@@ -33,8 +33,11 @@ external css has lowest priority
 
 css selectors:
 1. id selector: attribute , change single element property, id value must be unique
---- we can access id in css using #id-value{}- id value must be unique
+--- we can access id in css using #(id-value){}- id value must be unique
+
 2. class selector: attribute , when we have to change multiple property in same or different elements
--- class value can be same or unique --.class-value{}
+-- class value can be same or unique --.(class-value){}
+
 3. element selector : p{},h2{}
+
 4. universal selector: *{}
