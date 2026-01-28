@@ -1,0 +1,18 @@
+.poster{
+    border: 5px solid black ;
+    background-color: lightskyblue;
+    margin-right: 30px;
+    margin-left: 30px ;
+    padding: 20px;;
+}
+.poster img {
+    width: 200px;        /* optional – adjust as needed */
+    height: 200px;       /* optional – keep same as width */
+    border-radius: 10px;
+    margin-left: 20px;
+    /* object-fit: cover;   /* important to avoid image stretching */
+}
+.poster h2{
+    text-align: right;
+    margin-top: -30px;
+}
