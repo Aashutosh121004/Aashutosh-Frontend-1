@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Flexbox Navbar – Complete Visual Guide (2026)</title>
+  <link rel="stylesheet" href="css_10_navbar.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">FlexNav</a>
+
+      <!-- Hidden checkbox for pure CSS toggle -->
+      <input type="checkbox" id="nav-toggle">
+
+      <label for="nav-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>CSS Flexbox Navbar – Modern & Responsive (2026 Style)</h1>
+
+    <div class="note">
+      <strong>Key Flexbox features used here:</strong><br>
+      • <code>display: flex</code> on .navbar → horizontal layout<br>
+      • <code>justify-content: space-between</code> → logo left, menu right<br>
+      • <code>align-items: center</code> → vertical centering<br>
+      • <code>gap: 32px</code> → clean spacing between links (no margins!)<br>
+      • <code>flex-direction: column</code> on mobile menu<br>
+      • Media query + checkbox hack → pure CSS hamburger (no JS)
+    </div>
+
+    <h2>How this is better than float-based navbars</h2>
+    <ul>
+      <li>No collapsing parent problems</li>
+      <li>Easy vertical + horizontal centering</li>
+      <li>gap property = cleaner code</li>
+      <li>Order & flex-grow/shrink available if needed</li>
+      <li>Responsive without weird hacks</li>
+    </ul>
+
+    <h2>Try it yourself</h2>
+    <p>Resize your browser window (or open on phone) to see:</p>
+    <ul>
+      <li>Desktop → horizontal menu + button</li>
+      <li>Tablet (~900px) → still horizontal, smaller gaps</li>
+      <li>Mobile (<768px) → hamburger appears, menu slides in</li>
+    </ul>
+
+    <div class="note">
+      <strong>Next steps after this:</strong><br>
+      1. Add active link highlighting<br>
+      2. Try <code>justify-content: center</code> with logo in middle<br>
+      3. Make dropdown menus with <code>position: absolute</code><br>
+      4. Move to CSS Grid for full-page layouts
+    </div>
+
+  </main>
+
+</body>
+</html>

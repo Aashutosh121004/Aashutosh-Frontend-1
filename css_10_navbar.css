@@ -1,0 +1,180 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+
+      /* FLEXBOX – the magic starts here */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;           /* modern gap instead of margin */
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #0066cc;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn {
+      background: #0066cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #0055aa;
+    }
+
+    /* ──────────────────────────────────────────────── */
+    /* MOBILE HAMBURGER MENU (pure CSS)                 */
+    /* ──────────────────────────────────────────────── */
+
+    .hamburger {
+      display: none;              /* hidden on desktop */
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Checkbox hack for toggle */
+    #nav-toggle {
+      display: none;
+    }
+
+    #nav-toggle:checked ~ .nav-links {
+      transform: translateX(0);
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Mobile menu styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 40px 0;
+        transform: translateX(100%);     /* hidden off-screen */
+        transition: transform 0.4s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .nav-right {
+        margin-top: 20px;
+      }
+
+      /* Center logo on mobile when menu is closed */
+      .navbar {
+        justify-content: space-between;
+      }
+    }
+
+    /* Educational section styles */
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      color: #1a3c5e;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .note {
+      background: #e6f3ff;
+      padding: 16px 24px;
+      border-left: 5px solid #0066cc;
+      margin: 24px 0;
+      border-radius: 4px;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Consolas', monospace;
+    }
+  

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CSS Float - Complete Visual Guide</title>
+<link rel="stylesheet" href="css_9_float.css" />
+
+</head>
+<body>
+
+<h1>CSS Float – Complete Visual Guide (2025)</h1>
+
+<div class="controls">
+    <strong>Quick jump:</strong><br>
+    <button onclick="document.getElementById('ex1').scrollIntoView({behavior:'smooth'})">1. Normal flow</button>
+    <button onclick="document.getElementById('ex2').scrollIntoView({behavior:'smooth'})">2. float:left</button>
+    <button onclick="document.getElementById('ex3').scrollIntoView({behavior:'smooth'})">3. float:right</button>
+    <button onclick="document.getElementById('ex4').scrollIntoView({behavior:'smooth'})">4. Text wrap</button>
+    <button onclick="document.getElementById('ex5').scrollIntoView({behavior:'smooth'})">5. Collapsing parent</button>
+    <button onclick="document.getElementById('ex6').scrollIntoView({behavior:'smooth'})">6. Margin issues</button>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>1. Normal document flow (no float)</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<div class="container" id="ex1">
+    <div class="box red">1</div>
+    <div class="box blue">2</div>
+    <div class="box green">3</div>
+    <div class="box purple">4</div>
+
+    <p style="margin-top:40px;">Boxes are block-level → each starts on new line (default behavior)</p>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>2. float: left;</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<div class="container" id="ex2">
+    <div class="box red">float:left</div>
+    <div class="box blue">float:left</div>
+    <div class="box green">float:left</div>
+    <div class="box purple">float:left</div>
+
+    <p style="margin-top:180px;">All floated elements move to the left and stack horizontally until there's no space.</p>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>3. float: right;</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<div class="container" id="ex3">
+    <div class="box red">float:right</div>
+    <div class="box blue">float:right</div>
+    <div class="box green">float:right</div>
+
+    <p style="margin-top:160px;">Elements move to the right edge (reverse stacking order).</p>
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>4. Classic use case: image + text wrapping</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<div class="container" id="ex4">
+    <div class="big-photo">float: left</div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, perferendis officiis nulla illum earum similique cumque, eveniet, unde accusamus doloremque repellat! Voluptatum, eligendi. Quae, illum, placeat. Doloremque, quo, repellendus.</p>
+    <p>Eveniet minima, veritatis iste officiis, doloremque voluptatibus, eligendi repellat illum accusamus dicta maxime earum nisi! Error, molestias, illum. Quisquam, alias, voluptatibus.</p>
+    <p>Repudiandae, repellendus, distinctio. Voluptatibus, consequatur, repellat, inventore, architecto magni ea numquam placeat illum officia modi dicta quos aspernatur suscipit debitis harum!</p>
+</div>
+
+<div class="note">
+    <strong>float</strong> takes element out of normal flow → text & inline elements wrap around it.
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>5. Most common problem: collapsing parent</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<h3>Problem (no clearfix)</h3>
+<div class="container" id="ex5">
+    <div class="box red">float:left</div>
+    <div class="box blue">float:left</div>
+    <div class="box green">float:left</div>
+
+    <p style="clear:both; margin-top:180px; font-style:italic; color:#777;">
+        → parent has zero height because all children are floated (taken out of flow)
+    </p>
+</div>
+
+<h3>Solutions (4 popular methods – 2025 ranking)</h3>
+
+<div class="container clearfix modern-clear">
+    <h4 style="margin-top:0;">Best modern way: display: flow-root</h4>
+    <div class="box orange">1</div>
+    <div class="box purple">2</div>
+    <div class="box green">3</div>
+    <p style="margin:0;">display: flow-root; → creates new block formatting context</p>
+</div>
+
+<div class="container clearfix overflow-hidden">
+    <h4>overflow: hidden / auto</h4>
+    <div class="box blue">A</div>
+    <div class="box red">B</div>
+</div>
+
+<div class="container clearfix">
+    <h4>Classic clearfix (::after)</h4>
+    <div class="box green">X</div>
+    <div class="box purple">Y</div>
+</div>
+
+<div class="note">
+    <strong>2025 recommendation order:</strong><br>
+    1. <code>display: flow-root</code> (cleanest, semantic)<br>
+    2. <code>overflow: hidden</code> (very common)<br>
+    3. clearfix pseudo-element (still used in legacy code)
+</div>
+
+<!-- ──────────────────────────────────────────────── -->
+<h2>6. Important side-effect: vertical margins collapse differently</h2>
+<!-- ──────────────────────────────────────────────── -->
+
+<div class="container" id="ex6">
+    <div class="box orange" style="float:left;">float:left</div>
+
+    <p>First paragraph – margin-top collapses with container (no space above)</p>
+
+    <p style="clear:left;">This paragraph has clear:left → starts below floated element</p>
+
+    <div style="clear:both; height:40px;"></div>
+
+    <div class="box purple" style="float:right;">float:right</div>
+    <p>Margins of floated elements do NOT collapse with adjacent elements in normal flow.</p>
+</div>
+
+<div class="note important">
+    Remember these 3 rules:
+    <ul>
+        <li>Floated elements are removed from normal flow</li>
+        <li>They only affect block-level siblings that come after them</li>
+        <li>Parent collapses unless you create a new formatting context (flow-root, overflow, clearfix…)</li>
+    </ul>
+</div>
+
+<h2 style="text-align:center; margin:60px 0 30px;">End of Float Tutorial 🎉</h2>
+<p style="text-align:center; color:#777;">
+    Modern layout tip (2025): prefer <strong>flexbox</strong> or <strong>grid</strong> for most layouts.<br>
+    Float is still useful for: image+text wrapping, legacy code, some special cases.
+</p>
+
+</body>
+</html>

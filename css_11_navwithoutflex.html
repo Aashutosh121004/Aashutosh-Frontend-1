@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar WITHOUT Flexbox – Float + Media Query Style</title>
+  <link rel="stylesheet" href="css_11_navwithoutflex.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">FloatNav</a>
+
+      <input type="checkbox" id="nav-toggle">
+
+      <label for="nav-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Navbar WITHOUT Flexbox (using float + old-school methods)</h1>
+
+    <div class="note">
+      <strong>Important things in this version:</strong><br>
+      • <code>float: left</code> / <code>float: right</code> → places logo left, menu & button right<br>
+      • <code>clear: both</code> (via ::after) → prevents parent collapse (same problem as float tutorial)<br>
+      • Mobile menu uses <code>position: fixed</code> + <code>transform</code> to slide in<br>
+      • Hamburger still uses checkbox hack (pure CSS toggle)<br>
+      • Vertical centering with <code>line-height</code> instead of align-items
+    </div>
+
+    <h2>How to test it</h2>
+    <ul>
+      <li>Big screen → logo left, links + button right (using float)</li>
+      <li>Resize smaller than ~768px → hamburger appears, menu slides from right</li>
+      <li>Click hamburger → menu opens / closes (no JavaScript!)</li>
+    </ul>
+
+    <div class="note">
+      <strong>Save this file and come back later</strong><br>
+      When you learn Flexbox, compare it with the previous version.<br>
+      You will immediately see why Flexbox feels cleaner and easier.
+    </div>
+
+  </main>
+
+</body>
+</html>
