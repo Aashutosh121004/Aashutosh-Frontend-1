@@ -9,7 +9,7 @@
       font-family: system-ui, -apple-system, sans-serif;
       background: #f8f9fa;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.6; /*"Make each line 1.6 times taller than the font-size of the text" — and it's currently one of the best all-round choices for readable body text on the web.*/
     }
 
     header {
@@ -63,7 +63,7 @@
 
     .nav-right {
       float: right;
-      line-height: 80px;
+      line-height: 60px;
       margin-left: 20px;
     }
 
