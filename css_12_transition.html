@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        .cont{
+            background-color: blueviolet;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            transition-property: all;
+            transition-duration: 3s;
+            transition-delay: 0s;
+            transition-timing-function: ease-in-out; 
+            /* transition timing function means 
+            The transition-timing-function property in CSS controls the speed curve (also called easing) of a transition. It determines how the intermediate values between the starting and ending states are calculated over the transition's duration.
+
+            In simple terms:
+            It decides whether the transition moves at a constant speed, starts slow and speeds up, speeds up then slows down, or follows a custom acceleration pattern.
+ */
+        }
+        .cont:hover{
+            background-color: coral;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            /* transition: all 1s ease-in-out; */
+        }
+    </STYle>
+</head>
+<body>
+    <div class="cont"></div>
+</body>
+</html>
+<!-- 
+Advance css : Transition , Transform, Position
+Transition + Transform
+
+transition : It is used to change the property values smoothly (over a given duration)
+works only on hover or active state
+
+duration : time taken to complete the transition
+default : 0s
+delay : time to wait before starting the transition
+-->
