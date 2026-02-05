@@ -23,7 +23,7 @@ body {
     transform: translateX(10px);
 }
 .TranslateY:hover{
-    transform: translateY(10px);
+    transform: translateY(-10px);
 }
 .TranslateXY:hover{
     transform: translate(15px,15px);
