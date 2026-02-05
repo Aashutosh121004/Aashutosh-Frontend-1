@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(4, 59, 12);
     padding : 10px;
 }
 .box{
@@ -30,5 +30,30 @@ body {
     /* x,y */
 }
 .TranslateZ:hover{
-    transform: perspective(200px) translateZ(50px);
+    transform: perspective(500px) translateZ(50px);
+}
+.Rotate:hover{
+    transform: rotate(50deg);
+    transition: 3s ease;
+}
+.RotateX:hover{
+    transform: perspective(200px) rotateX(50deg);
+    transition: 1s ease;
+}
+.rotateY:hover{
+    transform: perspective(100px) rotateY(50deg);
+    transition: 1s ease;
+}
+.RotateZ:hover{
+    transform: rotateZ(50deg);
+}
+.rotate3d:hover{
+    transform: perspective(200px) rotate3d(2,5,2,50deg);
+    transition: 1s ease;
+}
+.skewX:hover{
+    transform: skewX(20deg);
+}
+.skewY:hover{
+    transform: skewY(20deg);
 }
