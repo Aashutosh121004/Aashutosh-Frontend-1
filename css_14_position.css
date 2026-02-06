@@ -1,0 +1,41 @@
+body{
+    height: 2000px;
+}
+
+
+.main{
+    height: 700px;
+    width: 100%;
+    border : 2px solid black;
+    background-color: lightblue;
+
+}
+.box{
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    background-color: red;
+    border: 2px solid black;
+}
+.box2{
+    /* position: static;
+    top: 100px; 
+     after static both will act nothing bcz its fixed 
+     left: 50px; */ 
+    
+    /* position: relative;
+    top: 100px;
+    /* after relative both will act as it is bcz its fixed 
+    left: 50px;*/
+
+    /*position: absolute;
+    top: 100px;
+     in this box 2 will act as its not there and box3 will come at its position , but it has some styling so box3 will come on backside of the box2 */
+
+    /* position: fixed; */
+
+    position: sticky;
+    top : 20px;
+} 
