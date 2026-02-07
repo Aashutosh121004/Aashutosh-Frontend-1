@@ -4,9 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #8320b1;
+            color: white;
+            padding-left: 60px;
+            text-align: left;
+            box-shadow: #8320b1 0px 2px 5px;   
+        }
+        .profile {
+            position: absolute;
+            left: 0;
+            top: 60px;
+            width: 200px;
+            background-color: blueviolet;
+            font-size: 20px;
+            line-height: 60px;
+        }
+        /* there are few more things which i have to learn while making real life project  */
+    </style>
 </head>
 <body>
-    
+    <!-- Top Navbar -->
+    <header>
+        <span>My learning portal</span>
+        <div class="profile">Welcome, Student</div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav>
+        <a href="">Dashboard</a>
+        <a href="">courses</a>
+        <a href="">Assignments</a>
+        <a href="">Notes</a>
+        <a href="">Quizzes</a>
+        <a href="">Progress</a>
+        <a href="">Settings</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Welcome to the learning Portal</h2>
+            <p>This portal helps you access your courses , track your progress and stay updated with new content and assignments.</p>
+        </section>
+
+        <section>
+            <h2>Todays Highlight</h2>
+            <p>Javascript DOM Workshop at 5pm <br/> 
+            Assignment on "If else conditions" due by tonight<br/>
+            New Notes added under the React Course
+            </p>
+        </section>
+        <div style="height: 1000px;"></div>
+        <!-- dummy container with more height -->
+    </main>
 </body>
 </html>
 <!-- start the position lecture with 25 mins 
