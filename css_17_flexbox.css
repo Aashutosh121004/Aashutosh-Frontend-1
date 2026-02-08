@@ -13,6 +13,8 @@
     justify-content: space-evenly ;
     /* property must be flex for justify content
     and it must have extra space / gap in width */
+    align-items: center ;
+     /* property must be flex for align items*/
 
 }
 
@@ -21,4 +23,9 @@
     height: 200px;
     background-color: red;
     border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+     /* property must be flex for align content*/
 }
+
+/* there is flex code generator as well for that */
