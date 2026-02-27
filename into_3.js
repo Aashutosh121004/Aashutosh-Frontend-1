@@ -31,14 +31,9 @@
 
 
 
-// Import the readline-sync package
-// This package allows us to take input from the user in the terminal (synchronously)
-const readlineSync = require('readline-sync');
 
 
-// Ask the user for their name
-// .question() displays the message and waits for user input
-const userName = readlineSync.question('May I know your name? ');
+const userName = prompt("May I know your name?");
 
 // Print a welcome message using template literals
 // ${userName} inserts the value inside the string
@@ -47,7 +42,7 @@ console.log(`Welcome, ${userName}!`);
 
 // Ask the user for their age
 // The input will be stored as a STRING by default
-const userAge = readlineSync.question('May I know your age? ');
+const userAge = prompt('May I know your age?');
 
 
 // Convert the age (string) into a number
