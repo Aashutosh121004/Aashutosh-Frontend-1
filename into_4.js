@@ -50,6 +50,11 @@ function greet(){
 
 console.log(greet()); // OUTPUT - Hello, World!
 
+
+
+
+
+
 // 2. Anonymous Function
 // A function that does not have a name. 
 // It is usually assigned to a variable or used as a callback. Since it has no name, it cannot be called directly.
@@ -105,6 +110,137 @@ function num(n, callback) {
 const double = (n) => n * 2;
 
 console.log(num(5, double));
+
+
+
+
+//7. Constructor Function
+// A special type of function used to create multiple objects with the same structure. It’s called with the new keyword.
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const user = new Person("Neha", 22);
+console.log(user.name); // OUTPUT - Neha
+
+
+
+
+
+
+//8. Async Function
+// Functions that handle asynchronous tasks. Declared with async, they return a Promise, and you can use await inside them to pause until another Promise resolves.
+async function fetchData() {
+  return "Data fetched!";
+}
+fetchData().then(console.log);
+
+
+
+
+
+
+//9. Generator Function
+// Declared with an asterisk *, these functions can pause execution using yield and resume later. Useful for lazy loading values or handling iterators.
+
+function* numbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = numbers();
+console.log(gen.next().value); 
+console.log(gen.next().value);
+
+
+
+
+
+
+// 10. Recursive Function
+// A function that calls itself until a condition is met. Very useful for problems like factorial, Fibonacci, or tree traversals.
+
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5));
+
+
+
+
+
+
+// 11. Higher-Order Function
+// A function that either takes another function as a parameter or returns another function. These are common in JavaScript (e.g., map, filter, reduce).
+function multiplyBy(factor) {
+  return function(num) {
+    return num * factor;
+  };
+}
+
+const double = multiplyBy(2);
+console.log(double(5)); // OUTPUT - 10
+
+
+
+
+
+
+
+
+// 12. Nested Functions
+// Functions defined within other functions are called nested functions. They have access to the variables of their parent function.
+function outerFun(a) {
+    function innerFun(b) {
+        return a + b;
+    }
+    return innerFun;
+}
+
+const addTen = outerFun(10);
+console.log(addTen(5));
+
+
+
+
+
+
+// 13. Pure Functions
+// Pure functions return the same output for the same inputs and do not produce side effects. They do not modify state outside their scope, such as modifying global variables, changing the state of objects passed as arguments, or performing I/O operations.
+function pureAdd(a, b) {
+    return a + b;
+}
+
+console.log(pureAdd(2, 3));
+
+
+
+
+
+
+
+// 14. Default Parameter Function
+// A function where parameters have default values if no argument is passed. Helps avoid undefined issues.
+function greet(name = "Guest") {
+  return "Hello, " + name;
+}
+console.log(greet());
+console.log(greet("Aman"));
+
+
+
+
+
+//15. Rest Parameter Function
+// Uses ... to collect all remaining arguments into an array. Very useful when you don’t know how many arguments will be passed.
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4));
+
 
 
 
