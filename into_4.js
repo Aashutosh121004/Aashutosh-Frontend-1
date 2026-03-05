@@ -181,8 +181,8 @@ function multiplyBy(factor) {
   };
 }
 
-const double = multiplyBy(2);
-console.log(double(5)); // OUTPUT - 10
+const double2 = multiplyBy(2);
+console.log(double2(5)); // OUTPUT - 10
 
 
 
