@@ -22,7 +22,7 @@ const age1 = 22;
 const city1 = "Delhi";
 
 // With object — clean
-const user = {
+const user_obj = {
   name: "Aman",
   age: 22,
   city: "Delhi"
@@ -37,8 +37,8 @@ const product = {
 };
 
 // Way 2 — new Object() (old way, avoid it)
-const product = new Object();
-product.name = "Phone";
+const product2 = new Object();
+product2.name = "Phone";
 
 // Way 3 — Constructor Function (for creating many similar objects)
 function createUser(name, age) {
@@ -50,8 +50,9 @@ function createUser(name, age) {
 const user1 = createUser("Aman", 22);
 const user2 = createUser("Neha", 19);
 
-2. Access & Update Properties
-jsconst user = {
+// 2. Access & Update Properties
+// js
+const user = {
   name: "Aman",
   age: 22,
   city: "Delhi"
@@ -79,19 +80,22 @@ delete user.city;
 
 console.log(user);
 // { name: "Aman", age: 23, email: "aman@gmail.com" }
-When to use bracket notation specifically:
-jsconst field = "price";
-const product = { price: 500 };
+
+
+// When to use bracket notation specifically:
+
+const field = "price";
+const product_new = { price: 500 };
 
 // This is where bracket shines — dynamic key
 function getField(obj, field) {
   return obj[field]; // obj.field would literally look for key "field"
 }
-getField(product, "price"); // 500
+getField(product_new, "price"); // 500
 
-3. Methods Inside Objects
-A method is just a function that lives inside an object.
-jsconst user = {
+// 3. Methods Inside Objects
+// A method is just a function that lives inside an object.
+const user_new = {
   name: "Aman",
   age: 22,
 
@@ -106,10 +110,13 @@ jsconst user = {
   }
 };
 
-console.log(user.greet());  // "Hi, I am Aman"
-console.log(user.getAge()); // 22
-Real example you'll see in projects:
-jsconst cart = {
+console.log(user_new.greet());  // "Hi, I am Aman"
+console.log(user_new.getAge()); // 22
+
+// Real example you'll see in projects:
+
+
+const cart = {
   items: [],
   total: 0,
 
@@ -135,9 +142,10 @@ console.log(cart.getTotal()); // ₹15500
 cart.removeItem("Cover");
 console.log(cart.getTotal()); // ₹15000
 
-4. Nested Objects
-Objects inside objects — you'll see this with every API response ever.
-jsconst user = {
+// 4. Nested Objects
+// Objects inside objects — you'll see this with every API response ever.
+
+const user_nested = {
   name: "Aman",
   age: 22,
   address: {           // nested object
@@ -152,15 +160,16 @@ jsconst user = {
 };
 
 // Accessing nested
-console.log(user.address.city);           // "Delhi"
-console.log(user.address.coords.lat);     // 28.6
-console.log(user.skills[0]);              // "JS"
+console.log(user_nested.address.city);           // "Delhi"
+console.log(user_nested.address.coords.lat);     // 28.6
+console.log(user_nested.skills[0]);              // "JS"
 
 // Updating nested
-user.address.city = "Mumbai";
-user.skills.push("Python");
-Real API response shape you'll deal with in React:
-jsconst apiResponse = {
+user_nested.address.city = "Mumbai";
+user_nested.skills.push("Python");
+// Real API response shape you'll deal with in React:
+
+const apiResponse = {
   status: "success",
   data: {
     user: {
@@ -175,19 +184,20 @@ jsconst apiResponse = {
 };
 
 // How you'd access it
-const userName   = apiResponse.data.user.name;
+const userName_response   = apiResponse.data.user.name;
 const firstOrder = apiResponse.data.user.orders[0].product;
 
-console.log(userName);    // "Aman"
+console.log(userName_response);    // "Aman"
 console.log(firstOrder);  // "Phone"
 
-5. Two Things You'll Use Constantly
-Destructuring — pull properties into variables cleanly:
-jsconst user = { name: "Aman", age: 22, city: "Delhi" };
+// 5. Two Things You'll Use Constantly
+// Destructuring — pull properties into variables cleanly:
+
+const user = { name: "Aman", age: 22, city: "Delhi" };
 
 // Old way
-const name = user.name;
-const age  = user.age;
+const user_name = user.name;
+const user_age = user.age;
 
 // Destructuring
 const { name, age, city } = user;
@@ -202,8 +212,10 @@ function showUser({ name, age }) {
   return `${name} is ${age} years old`;
 }
 showUser(user); // "Aman is 22 years old"
-Spread operator — copy or merge objects:
-jsconst user = { name: "Aman", age: 22 };
+
+// Spread operator — copy or merge objects:
+
+const user = { name: "Aman", age: 22 };
 
 // Copy (doesn't affect original)
 const updatedUser = { ...user, age: 23 };
@@ -218,8 +230,8 @@ const settings = { ...defaults, ...userPrefs };
 // { theme: "dark", lang: "hi", fontSize: 16 }
 // userPrefs.lang overwrote defaults.lang
 
-🎯 One Exercise to Lock All of This
-js// Build this from scratch and write methods for it:
+// 🎯 One Exercise to Lock All of This
+// Build this from scratch and write methods for it:
 
 const student = {
   name: "Aman",
@@ -230,5 +242,37 @@ const student = {
   // getAverage()  → average of all marks
   // isEligible()  → attendance >= 75 AND average >= 60
   // getReport()   → returns a string summary
+  getAverage_loop_general() {
+    let sum = 0;
+    let count = 0;
+
+    for (let subject in this.marks) {
+      sum += this.marks[subject];
+      count++;
+    }
+
+    return sum / count;
+  },
+  getAverage() {
+    const m = this.marks;
+    const avg = (m.math + m.science + m.english) / 3;
+    return avg;
+  },
+
+  isEligible() {
+    const avg = this.getAverage();
+    return this.attendance >= 75 && avg >= 60;
+  },
+
+  getReport() {
+    const avg = this.getAverage();
+    const eligible = this.isEligible();
+
+    return `Student: ${this.name}
+Average Marks: ${avg}
+Attendance: ${this.attendance}%
+Eligible: ${eligible}`;
+  }
+  
 };
 
